@@ -88,16 +88,26 @@
         align-items: center;
         font-family: Arial, sans-serif;
         background-image: url(https://i.imgur.com/biyoP6W.png);
-        background-size: contain;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
         padding: 24px;
+      }
+
+      @media (width >= 768px) {
+        body {
+          background-size: contain;
+          background-repeat: repeat;
+          background-attachment: inherit;
+        }
       }
 
       .charactersWrapper {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
         gap: 24px 16px;
-        height: 700px;
         width: 550px;
+        max-width: 100%;
         flex-wrap: wrap;
       }
 
@@ -122,6 +132,7 @@
         box-shadow: -50px -50px 0 -40px var(--red), 50px 50px 0 -40px var(--red);
         transition: filter 0.3s;
         cursor: pointer;
+        height: 350px;
       }
 
       .character:hover {
