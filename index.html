@@ -86,10 +86,10 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        height: 100vh;
         font-family: Arial, sans-serif;
         background-image: url(https://i.imgur.com/biyoP6W.png);
         background-size: contain;
+        padding: 24px;
       }
 
       .charactersWrapper {
@@ -120,7 +120,14 @@
         flex-direction: column;
         justify-content: flex-end;
         box-shadow: -50px -50px 0 -40px var(--red), 50px 50px 0 -40px var(--red);
+        transition: filter 0.3s;
+        cursor: pointer;
       }
+
+      .character:hover {
+        filter: brightness(0.7);
+      }
+
       .character.karionu {
         background-image: url(https://i.imgur.com/Anbc6iz.jpeg);
         background-size: 800px;
@@ -200,7 +207,6 @@
     />
   </head>
   <body>
-    <br />
     <div class="charactersWrapper">
       <div class="character shiune floating1 frame">
         <div class="namePlate caudex-bold"><span>Zhari Sharif</span></div>
