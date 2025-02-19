@@ -96,10 +96,39 @@
 
       @media (width >= 768px) {
         body {
-          background-size: contain;
+          background-size: auto;
           background-repeat: repeat;
           background-attachment: inherit;
         }
+      }
+
+      .pageWrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+        padding: 24px;
+        background-color: #000000b3;
+        border: 4px double #daa52090;
+      }
+
+      .title {
+        color: #daa520;
+        font-size: 64px;
+        margin-bottom: 40px;
+        position: relative;
+      }
+
+      .title::before {
+        content: "";
+        position: absolute;
+        background-image: url(https://i.imgur.com/6XtjJ3E.png);
+        width: 443px;
+        height: 78px;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -16px;
+        opacity: 0.5;
       }
 
       .charactersWrapper {
@@ -179,13 +208,16 @@
       }
 
       .namePlate {
-        width: 100%;
+        width: calc(100% - 14px);
         text-align: center;
-        margin-bottom: 24px;
+        margin-bottom: 7px;
+        border-top: 0.1px solid #daa52090;
         background-color: #b8860b40;
         padding: 8px 0px;
         color: white;
         font-size: 16px;
+        margin-left: auto;
+        margin-right: auto;
       }
 
       .namePlate span {
@@ -218,24 +250,31 @@
     />
   </head>
   <body>
-    <div class="charactersWrapper">
-      <div class="character shiune floating1 frame">
-        <div class="namePlate caudex-bold"><span>Zhari Sharif</span></div>
-      </div>
-      <div class="character karionu floating2 frame">
-        <div class="namePlate caudex-bold"><span>Donovan Doloso</span></div>
-      </div>
-      <div class="character rosebeth floating1 frame">
-        <div class="namePlate caudex-bold"><span>Rosebeth M. Black</span></div>
-      </div>
-      <div class="character ausrede floating2 frame">
-        <div class="namePlate caudex-bold"><span>Aimée Beaumont</span></div>
-      </div>
-      <div class="character ambrosial floating1 frame">
-        <div class="namePlate caudex-bold"><span>Xandria Obadele</span></div>
-      </div>
-      <div class="character itter floating2 frame">
-        <div class="namePlate caudex-bold"><span>Demian B. Wayland</span></div>
+    <div class="pageWrapper">
+      <div class="title caudex-bold">Tábula Rasa</div>
+      <div class="charactersWrapper">
+        <div class="character shiune floating1 frame">
+          <div class="namePlate caudex-bold"><span>Zhari Sharif</span></div>
+        </div>
+        <div class="character karionu floating2 frame">
+          <div class="namePlate caudex-bold"><span>Donovan Doloso</span></div>
+        </div>
+        <div class="character rosebeth floating1 frame">
+          <div class="namePlate caudex-bold">
+            <span>Rosebeth M. Black</span>
+          </div>
+        </div>
+        <div class="character ausrede floating2 frame">
+          <div class="namePlate caudex-bold"><span>Aimée Beaumont</span></div>
+        </div>
+        <div class="character ambrosial floating1 frame">
+          <div class="namePlate caudex-bold"><span>Xandria Obadele</span></div>
+        </div>
+        <div class="character itter floating2 frame">
+          <div class="namePlate caudex-bold">
+            <span>Demian B. Wayland</span>
+          </div>
+        </div>
       </div>
     </div>
   </body>
