@@ -98,7 +98,6 @@
         body {
           background-size: auto;
           background-repeat: repeat;
-          background-attachment: inherit;
         }
       }
 
@@ -110,13 +109,15 @@
         padding: 24px;
         background-color: #000000b3;
         border: 4px double #daa52090;
+        width: 600px;
+        max-width: 100%;
       }
 
       .title {
         color: #daa520;
         font-size: 64px;
-        margin-bottom: 40px;
         position: relative;
+        filter: drop-shadow(0px 0px 2px #000);
       }
 
       .title::before {
@@ -127,17 +128,17 @@
         height: 78px;
         left: 50%;
         transform: translateX(-50%);
-        bottom: -16px;
+        bottom: 0px;
         opacity: 0.5;
         pointer-events: none;
+        filter: drop-shadow(0px 0px 10px #daa520cc);
       }
 
       .charactersWrapper {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
         gap: 24px 16px;
-        width: 550px;
-        max-width: 100%;
+        width: 100%;
         flex-wrap: wrap;
       }
 
@@ -163,6 +164,7 @@
         transition: filter 0.3s;
         cursor: pointer;
         height: 350px;
+        text-decoration: unset;
       }
 
       .character:hover {
@@ -225,6 +227,56 @@
         filter: drop-shadow(0px 0px 1px #00000060);
       }
 
+      .description {
+        color: #daa520;
+        font-size: 14px;
+        letter-spacing: 2px;
+        filter: drop-shadow(0px 0px 2px #daa520cc);
+        text-align: center;
+      }
+
+      .informationSection {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+      }
+
+      .info {
+        background-color: #000000b3;
+        border: 4px double #daa52090;
+        color: white;
+        font-size: 12px;
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        height: 300px;
+        overflow: auto;
+        width: 100%;
+      }
+
+      .infoHeader {
+        width: 100%;
+        padding: 4px;
+        text-align: center;
+        background-color: #daa520cc;
+        color: white;
+        font-weight: bold;
+        margin-bottom: 4px;
+        font-size: 14px;
+      }
+
+      .infoLabel {
+        color: #daa52090;
+        border: 1px solid #daa52090;
+        padding: 2px 6px;
+        display: inline-block;
+        font-size: 12px;
+        letter-spacing: 2px;
+        margin-right: 4px;
+      }
+
       @keyframes floatAnimation1 {
         0% {
           transform: translateY(-8px);
@@ -242,6 +294,10 @@
           transform: translateY(-8px);
         }
       }
+
+      *::-webkit-scrollbar {
+        display: none;
+      }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -250,9 +306,14 @@
       rel="stylesheet"
     />
   </head>
-  <body>
+  <body class="caudex-regular">
     <div class="pageWrapper">
       <div class="title caudex-bold">Tábula Rasa</div>
+
+      <div class="description">
+        Grupo | Nivel 0 | Fundada en 18/02/2025 | Legal Benigno<br />
+      </div>
+
       <div class="charactersWrapper">
         <a
           href="https://mwwrpg.forumcommunity.net/?t=63203037"
@@ -300,6 +361,67 @@
             <span>Demian B. Wayland</span>
           </div>
         </a>
+      </div>
+
+      <div class="informationSection">
+        <div class="info">
+          <div class="infoHeader">Información</div>
+          <div><span class="infoLabel">Líder</span> Donovan Doloso</div>
+          <div><span class="infoLabel">Sublíder</span> Zhari Sharif</div>
+          <span class="infoLabel">Puntos de agrupación</span>
+          <div>
+            <span style="color: green">0</span> /
+            <span style="color: red">0</span> /
+            <span style="color: orange">0</span>
+          </div>
+          <div><span class="infoLabel">Sede/s</span> -</div>
+          <div class="infoHeader">Alianzas</div>
+          -
+          <div class="infoHeader">Enemistades</div>
+          -
+          <div class="infoHeader">Baúl</div>
+          -
+        </div>
+        <div class="info">
+          <div class="infoHeader">Historia</div>
+          <p>
+            <i>
+              Un día cinco alumnos se plantearon una pregunta, en Historia de la
+              Magia, mientras escuchaban sobre el Rey Arturo. ¿Qué es ser un
+              caballero? Caballero significa intentar salvar la vida de todos, y
+              me refiero a todos. Eso incluye a aquellos a los que llamarías tus
+              enemigos, o a aquellos que intentan dañar a otros. No importa
+              quiénes sean o lo que hayan hecho, siguen siendo personas como
+              todos los demás.<br /><br />
+              A los ojos de un caballero, no hay nadie que merezca la muerte, y
+              no hay nadie que no valga la pena salvar. Cualquiera puede ser un
+              caballero, simplemente tienes que elegir serlo. Los valores que
+              intentan promoverse en esta escuela se han ido perdiendo conforme
+              el pasar el tiempo, y desde la ida de Albus Dumbledore y la
+              relegación de otras asignaturas, los alumnos se comportan más como
+              salvajes sociópatas.<br /><br />
+              A golpe de varita (o espada) se debe de seguir una ley por la que
+              todos juraron sobre la gran mesa: proteger al débil. Pues el débil
+              conoce el verdadero valor de la fuerza, y los más fuertes protegen
+              a los débiles.</i
+            >
+          </p>
+          <div class="infoHeader">Objetivos</div>
+          <ul style="padding-inline-start: 16px">
+            <li>Hacer prevalecer los ideales de la caballería clásica.</li>
+            <li>Proteger a los débiles.</li>
+            <li>Decir la verdad aunque eso conlleve a su muerte.</li>
+            <li>Formar una generación justa de auores incorruptibles.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="info">
+        <div class="infoHeader">Historial de acciones</div>
+        <div>
+          <b>[ 18/02/2025 ]</b> - Fundamos la agrupación Tábula Rasa con los
+          siguientes integrantes: Donovan Doloso, Zhari Sharif, Rosebeth M.
+          Black, Aimée Beaumont, Xandria Obadele y Demian B. Wayland.
+        </div>
       </div>
     </div>
   </body>
