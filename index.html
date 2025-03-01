@@ -92,6 +92,8 @@
         background-repeat: no-repeat;
         background-attachment: fixed;
         padding: 24px;
+
+        --card-height: 300px;
       }
 
       @media (width >= 768px) {
@@ -176,7 +178,7 @@
         box-shadow: -50px -50px 0 -40px var(--red), 50px 50px 0 -40px var(--red);
         transition: filter 0.3s;
         cursor: pointer;
-        height: 350px;
+        height: var(--card-height);
         text-decoration: unset;
       }
 
@@ -202,17 +204,29 @@
       .character.ausrede {
         background-image: url(https://i.imgur.com/R6c9VgD.png);
         background-size: 600px;
-        background-position: 50% -25px;
+        background-position: 50% -50px;
       }
       .character.itter {
         background-image: url(https://i.imgur.com/yfp4hiF.png);
         background-size: 450px;
-        background-position: calc(50% + 25px) -5px;
+        background-position: calc(50% + 25px) -25px;
       }
       .character.ambrosial {
         background-image: url(https://i.imgur.com/nqviPpj.png);
         background-size: cover;
         background-position: center;
+      }
+      .character.vouz {
+        background-image: url(https://i.imgur.com/bTVQDjZ.png);
+        background-size: cover;
+        background-position: center;
+      }
+
+      .character.shiune,
+      .character.ambrosial,
+      .character.ausrede,
+      .character.itter {
+        margin-top: calc(calc(var(--card-height) / 2) * -1);
       }
 
       .floating1 {
@@ -332,19 +346,21 @@
       </div>
 
       <div class="charactersWrapper">
-        <a
-          href="https://mwwrpg.forumcommunity.net/?t=63203037"
-          target="_blank"
-          class="character shiune floating1 frame"
-        >
-          <div class="namePlate caudex-bold"><span>Zhari Sharif</span></div>
-        </a>
+        <br />
         <a
           href="https://mwwrpg.forumcommunity.net/?t=63206790"
           target="_blank"
-          class="character karionu floating2 frame"
+          class="character karionu floating1 frame"
         >
           <div class="namePlate caudex-bold"><span>Donovan Doloso</span></div>
+        </a>
+        <br />
+        <a
+          href="https://mwwrpg.forumcommunity.net/?t=63203037"
+          target="_blank"
+          class="character shiune floating2 frame"
+        >
+          <div class="namePlate caudex-bold"><span>Zhari Sharif</span></div>
         </a>
         <a
           href="https://mwwrpg.forumcommunity.net/?t=63202966"
@@ -365,9 +381,18 @@
         <a
           href="https://mwwrpg.forumcommunity.net/?t=63203586"
           target="_blank"
-          class="character ambrosial floating1 frame"
+          class="character ambrosial floating2 frame"
         >
           <div class="namePlate caudex-bold"><span>Xandria Obadele</span></div>
+        </a>
+        <a
+          href="https://mwwrpg.forumcommunity.net/?t=63219682"
+          target="_blank"
+          class="character vouz floating1 frame"
+        >
+          <div class="namePlate caudex-bold">
+            <span>Connor McGregor</span>
+          </div>
         </a>
         <a
           href="https://mwwrpg.forumcommunity.net/?t=63212387"
